@@ -17,16 +17,25 @@ form.addEventListener("submit", function (e) {
   }
   else {
     const bmi = (weight / ((height*height)/10000)).toFixed(2)
+    const bmi1 = (weight / ((height*height)/10000)).toFixed(2)
     // show the results 
-    
+
+
+
     if(bmi < 18.6) {
-        results.innerHTML = `<span>${bmi} - You are under weight..please give some attention towards your health</span>`
+      results.innerHTML = `
+        <span>Your BMI: ${bmi}</span><br>
+        <p> You are under weight. Please give some attention towards your health.</p>`;
     }
     else if(bmi >= 18.6 && bmi <= 24.9) {
-        results.innerHTML = `<span>${bmi} - You are maintaing your health like a pro...keep it up !!!</span>`
+      results.innerHTML = `
+        <span>Your BMI: ${bmi}</span>
+        <p> You are maintaing your health like a pro...keep it up. !!!</p>`;
     }
     else {
-        results.innerHTML = `<span>${bmi} - You are over-weight...please plan you diet accordingly</span>`
-    }
+      results.innerHTML = `
+        <span>Your BMI: ${bmi}</span>
+        <p> You are over-weight...please plan you diet accordingly.</p>`;
+    }        
   }
 });
