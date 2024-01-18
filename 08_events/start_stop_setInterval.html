@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let intervalId;
+    
+
+    const start = function () {
+      intervalId = setInterval(function () {
+        const date = new Date();
+        console.log(`Hi, ${date.toLocaleTimeString()}`);
+      }, 2000);
+    }
+
+    document.querySelector("#start").addEventListener('click', start)
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(intervalId)
+    });
+
+    clearInterval(intervalId);
+  </script>
+</html>
